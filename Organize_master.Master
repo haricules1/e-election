@@ -1,0 +1,218 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Organize_master.master.cs" Inherits="WebApplication1.Organize_master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    width: 100%;
+    top: -1px;
+    left: 2px;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+    height: 64px;
+}
+
+        .roundedcorners
+{
+-webkit-border-radius: 50%;
+-khtml-border-radius: 50%;	
+-moz-border-radius: 50%;
+border-radius: 50%;
+}
+        
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: 727px;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.header h1
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    line-height: 2em;
+    font-size: 2em;
+    width: 98%;
+}
+
+        .style1
+        {
+            font-weight: normal;
+            font-size: medium;
+            font-family: "Comic Sans MS";
+        }
+        
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.cssmenu {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto;
+}
+.cssmenu > ul {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAoCAIAAACw1AcgAAAAA3NCSVQICAjb4U/gAAAAHUlEQVQImWN4+vQpEwMDAxMDAwPT////4exBIgYA2loa5nAttNYAAAAASUVORK5CYII=) 100% 100%;
+  background: -moz-linear-gradient(top, #e5e5e5 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #dddddd));
+  background: -webkit-linear-gradient(top, #e5e5e5 0%, #dddddd 100%);
+  background: -o-linear-gradient(top, #e5e5e5 0%, #dddddd 100%);
+  background: -ms-linear-gradient(top, #e5e5e5 0%, #dddddd 100%);
+  background: linear-gradient(#e5e5e5 0%, #dddddd 100%);
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+  padding-top: 5px;
+  width: 100%;
+}
+.cssmenu ul {
+  background: #e5e5e5;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  list-style: none;
+}
+.cssmenu ul {
+  position: relative;
+  z-index: 597;
+  float: left;
+}
+.cssmenu ul,
+.cssmenu ul li,
+.cssmenu ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cssmenu > ul > li {
+  float: left;
+  padding: 0 10px;
+  position: relative;
+}
+.cssmenu ul li {
+  float: none;
+}
+.cssmenu ul li {
+  float: left;
+  min-height: 1px;
+  line-height: 1em;
+  vertical-align: middle;
+}
+.cssmenu > ul > li a {
+  line-height: 35px;
+}
+.cssmenu > ul > li > a {
+  color: #333333;
+}
+.cssmenu a {
+  display: inline-block;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 12px;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="header" style="background-color: #33CCCC">
+            <div class="loginDisplay" style="background-color: #33CCCC">
+                <asp:Image ID="Image1" class="roundedcorners" runat="server" BorderStyle="None" Height="65px" 
+                    ImageAlign="Left" ImageUrl="~/pics/logo.jpg" 
+                    style="margin-left: 1px; margin-top: 0px" Width="76px" />
+                <div class="title">
+                    <h1 class="style1">
+                        E-Election</h1>
+            </div>
+                <br />
+            </div>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="cssmenu" 
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                    BackColor="#33CCFF" BorderColor="#33CCFF" BorderStyle="None">
+                    <DynamicHoverStyle BackColor="#66FF99" />
+                    <DynamicMenuItemStyle BackColor="#000099" BorderStyle="None" />
+                    <DynamicMenuStyle BackColor="#000099" BorderStyle="None" />
+                    <DynamicItemTemplate>
+                        <%# Eval("Text") %>
+                    </DynamicItemTemplate>
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/AdminPage.aspx" Text="Home"/>
+                        <asp:MenuItem Text="View Feedbacks" Value="Feedback" 
+                            NavigateUrl="~/Viewfb.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="~/Default.aspx">
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle BackColor="#000099" BorderStyle="None" />
+                    <StaticMenuStyle BackColor="#000099" BorderStyle="None" />
+                    <StaticItemTemplate>
+                        <%# Eval("Text") %>
+                    </StaticItemTemplate>
+                </asp:Menu>
+        </div>
+        <div class="title">
+                    <h1 class="style1">
+                        </h1>
+            </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+        
+        </body>
+</html>

@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .roundedcorners
+{
+-webkit-border-radius: 50%;
+-khtml-border-radius: 50%;	
+-moz-border-radius: 50%;
+border-radius: 50%;
+}
+        .style1
+        {
+            font-weight: normal;
+            font-size: medium;
+            font-family: "Comic Sans MS";
+        }
+        body
+        {
+            width:100%;
+        }
+        
+    </style>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="cssmenu/styles.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+    <form runat="server">
+    <div class="page">
+        <div class="header" style="background-color: #33CCCC">
+            <div class="loginDisplay" style="background-color: #33CCCC">
+                <asp:Image ID="Image1" class="roundedcorners" runat="server" BorderStyle="None" Height="65px" 
+                    ImageAlign="Left" ImageUrl="~/pics/logo.jpg" 
+                    style="margin-left: 1px; margin-top: 0px" Width="76px" />
+                <div class="title">
+                    <h1 class="style1">
+                        E-Election</h1>
+            </div>
+            </div>
+            <div class="clear hideSkiplink" style="background-color: #33CCCC; width: 100%;">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="cssmenu" 
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                    BackColor="#33CCFF" BorderColor="#33CCFF" BorderStyle="None">
+                    <DynamicHoverStyle BackColor="#66FF99" />
+                    <DynamicMenuItemStyle BackColor="#000099" BorderStyle="None" />
+                    <DynamicMenuStyle BackColor="#000099" BorderStyle="None" />
+                    <DynamicItemTemplate>
+                        <%# Eval("Text") %>
+                    </DynamicItemTemplate>
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Election" Value="Election" 
+                            NavigateUrl="~/PrivateLogin.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Organize" Value="Organize" NavigateUrl="~/Organize.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Contact Us" Value="Contact Us"/>
+                        <asp:MenuItem Text="Feedback" Value="Feedback" NavigateUrl="~/Feedback.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle BackColor="#000099" BorderStyle="None" />
+                    <StaticMenuStyle BackColor="#000099" BorderStyle="None" />
+                    <StaticItemTemplate>
+                        <%# Eval("Text") %>
+                    </StaticItemTemplate>
+                </asp:Menu>
+            </div>
+        </div>
+        
+        <div class="main">
+                  <asp:ContentPlaceHolder ID="MainContent" runat="server">
+           </asp:ContentPlaceHolder> 
+        </div>
+
+    </div>
+    </form>
+</body>
+</html>
